@@ -590,6 +590,10 @@ video {
   right: 75%;
 }
 
+.right-\[5\%\] {
+  right: 5%;
+}
+
 .z-10 {
   z-index: 10;
 }
