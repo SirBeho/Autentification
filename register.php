@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,16 +22,22 @@
                 </p>
             </div>
 
-            <form method="post" class="flex flex-col gap-4 text-gray-500">
+            <form action="./php/registro.php" method="post"  class="flex flex-col gap-4 text-gray-500">
                 <div class="flex items-center gap-3 border border-[#BDBDBD] rounded-lg p-3 ps-4">
-                    <!-- <div class="w-4"><?php include './images/password.svg';?></div> -->
                     <div class="w-4" ><img  src="./images/email.svg" alt="logo"></div>
-                    <input class="outline-none" type="email" autocomplete="off" placeholder="Email" >
+                    <input class="outline-none w-full" type="email" autocomplete="off" name="email" placeholder="Email" required >
                 </div>
+                <?php
+                    session_start();
+                    if (isset($_SESSION['error_message'])) {
+                        echo '<p class="text-red-500">' . $_SESSION['error_message'] . '</p>';
+                        unset($_SESSION['error_message']);
+                    }
+                    ?>
                 <div class="flex items-center gap-3 border border-[#BDBDBD] rounded-lg p-3 ps-4">
                     <div class="w-4"><img src="./images/password.svg" alt="logo"></div>
-                    <input class="outline-none" type="password" autocomplete="off" placeholder="Password" >
-                </div>
+                    <input class="outline-none w-full" type="password" autocomplete="off" name="password" placeholder="Password" required >
+                </div> 
                 <button class="w-full p-1.5 mt-2 bg-blue-500 rounded-lg text-sm leading-normal font-semibold text-white" type="submit" >Start Coding Now</button>
             </form>
             
@@ -41,7 +49,7 @@
                     <button><img src="./images/Twitter.svg" alt="logo"></button>
                     <button><img src="./images/Gihub.svg" alt="logo"></button>
                 </div>
-                <p class="w-fit text-[17px] text-[#333]" > Already a member? <a href="index.html" class="text-blue-500">Login</a></p>
+                <p class="w-fit text-[17px] text-[#333]" > Already a member? <a href="./index.php" class="text-blue-500">Login</a></p>
             </div>
 
         </div>

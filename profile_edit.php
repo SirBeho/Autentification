@@ -1,11 +1,16 @@
+<?php
+        session_start();
+        extract($_SESSION['usuario']);
+
+        ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;300;400;500;700;900&display=swap">
-
     <link href="css/output.css" rel="stylesheet" />
     <title>Document</title>
 </head>
@@ -23,7 +28,7 @@
                     <img class="w-full h-full object-cover"
                         src="https://img.freepik.com/foto-gratis/cierrese-encima-retrato-cara-joven-hombre-barbudo_171337-2887.jpg?w=2000"
                         alt="">
-                </div>
+              </div>
                 <span class="font-semibold text-xs leading-snug">Xanthe Neal</span>
                 <div class="w-4 rotate-180"><img src="./images/arrow.svg" alt="logo" /></div>
             </div>
@@ -81,28 +86,28 @@
                 <label class="items-center">
                     <span>Name</span></br>
                     <input placeholder="Enter you name..."
-                        class="w-96 text-sm  border border-gray-400 rounded-xl bg-transparent p-3"></input>
+                        class="w-96 text-sm  border border-gray-400 rounded-xl bg-transparent p-3" value="<?php echo $name?>"></input>
                 </label>
 
                 <label class="items-center ">
                     <span>Bio</span></br>
                     <textarea placeholder="Enter you bio..." rows="3"
-                        class="w-96 text-sm border border-gray-400 rounded-xl bg-transparent p-3 resize-none"></textarea>
+                        class="w-96 text-sm border border-gray-400 rounded-xl bg-transparent p-3 resize-none"><?php echo $bio?></textarea>
                 </label>
                 <label class="items-center">
                     <span>Phone</span></br>
                     <input placeholder="Enter you phone..."
-                        class="w-96 text-sm  border border-gray-400 rounded-xl bg-transparent p-3"></input>
+                        class="w-96 text-sm  border border-gray-400 rounded-xl bg-transparent p-3" value="<?php echo $phone?>"></input>
                 </label>
                 <label class="items-center">
                     <span>Email</span></br>
                     <input placeholder="Enter you email..."
-                        class="w-96 text-sm  border border-gray-400 rounded-xl bg-transparent p-3"></input>
+                        class="w-96 text-sm  border border-gray-400 rounded-xl bg-transparent p-3" value="<?php echo $email?>"></input>
                 </label>
                 <label class="items-center">
                     <span>Password</span></br>
                     <input placeholder="Enter you password..."
-                        class="w-96 text-sm  border border-gray-400 rounded-xl bg-transparent p-3"></input>
+                        class="w-96 text-sm  border border-gray-400 rounded-xl bg-transparent p-3" value="*********"></input>
                 </label>
 
                 <button class="w-min px-5 py-2 bg-blue-500 rounded-lg text-sm leading-normal font-semibold text-white" type="submit"> Save </button>
