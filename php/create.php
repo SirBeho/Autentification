@@ -17,7 +17,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     $hash = password_hash($password,PASSWORD_DEFAULT);
 
     $resultado = $mysqli -> query("insert into usuario(email,password) values ('$email','$hash')"); 
-   
+    
      if($resultado){
         $data = $mysqli -> query("SELECT * FROM usuario ORDER BY id DESC LIMIT 1");
         $_SESSION['usuario'] = $data-> fetch_assoc();
@@ -26,3 +26,10 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     }  
 
 };
+
+/* 
+try {
+    $resultado = $mysqli->query("INSERT INTO usuario(email,password) VALUES ('$email','$hash')"); 
+} catch (mysqli_sql_exception $e) {
+        echo "<h1>Este Email ya ha sido registrado</h1>";      
+} */

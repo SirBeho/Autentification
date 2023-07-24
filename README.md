@@ -1,95 +1,48 @@
-<!-- Please update value in the {}  -->
+# Página Web de Inicio de Sesión y Registro con Tailwind CSS
 
-npx tailwindcss -i ./css/input.css -o ./css/output.css --watch
+Esta es una página web que ofrece la funcionalidad de inicio de sesión y registro para los usuarios, construida utilizando Tailwind CSS. Permite a los usuarios registrarse para crear una cuenta o iniciar sesión si ya tienen una cuenta existente. A continuación, se describen las principales características de la página:
 
+## Funcionalidades:
 
-<h1 align="center">{Your project name}</h1>
+### 1. Inicio de Sesión (index.php):
 
-<div align="center">
-   Solution for a challenge from  <a href="http://devchallenges.io" target="_blank">Devchallenges.io</a>.
-</div>
+- Inicio de sesión de usuarios con dirección de correo electrónico y contraseña.
+- Mensaje de error en caso de credenciales incorrectas.
 
-<div align="center">
-  <h3>
-    <a href="https://{your-demo-link.your-domain}">
-      Demo
-    </a>
-    <span> | </span>
-    <a href="https://{your-url-to-the-solution}">
-      Solution
-    </a>
-    <span> | </span>
-    <a href="https://devchallenges.io/challenges/N1fvBjQfhlkctmwj1tnw">
-      Challenge
-    </a>
-  </h3>
-</div>
+### 2. Registro de Usuarios (register.php):
 
-<!-- TABLE OF CONTENTS -->
+- Registro de usuarios con dirección de correo electrónico y contraseña.
+- Mensaje de error si la dirección de correo electrónico ya está en uso.
+- Redirección a la página de edición de perfil después del registro para completar la información.
 
-## Table of Contents
+### 3. Perfil de Usuario (profile.php):
 
-- [Overview](#overview)
-  - [Built With](#built-with)
-- [Features](#features)
-- [How to use](#how-to-use)
-- [Contact](#contact)
-- [Acknowledgements](#acknowledgements)
+- Visualización de la información personal del usuario, incluyendo foto de perfil, nombre, biografía, número de teléfono y correo electrónico.
+- Vista previa de la foto de perfil predeterminada si no se ha cargado una imagen personalizada.
 
-<!-- OVERVIEW -->
+### 4. Edición del Perfil de Usuario (profile_edit.php):
 
-## Overview
+- Edición del perfil del usuario, incluyendo el cambio de nombre, biografía, número de teléfono, correo electrónico y foto de perfil.
+- Vista previa de la foto de perfil antes de guardar los cambios.
+- Mensajes de éxito o causa del error después de guardar los cambios en el perfil.
 
-![screenshot](https://user-images.githubusercontent.com/16707738/92399059-5716eb00-f132-11ea-8b14-bcacdc8ec97b.png)
+### 5. Menú Desplegable (nav.php):
 
-Introduce your projects by taking a screenshot or a gif. Try to tell visitors a story about your project by answering:
+- Menú de navegación desplegable con animación.
+- Opción para acceder al perfil del usuario ("My Profile").
+- Opción para cerrar sesión ("Logout").
 
-- Where can I see your demo?
-- What was your experience?
-- What have you learned/improved?
-- Your wisdom? :)
+## Tecnologías Utilizadas:
 
-### Built With
+- HTML y CSS para la estructura y diseño de la página web.
+- Tailwind CSS para estilos y diseño responsivo.
+- PHP para la gestión de sesiones y el manejo de la lógica de inicio de sesión y registro.
 
-<!-- This section should list any major frameworks that you built your project using. Here are a few examples.-->
+## Instalación:
 
-- [React](https://reactjs.org/)
-- [Vue.js](https://vuejs.org/)
-- [Tailwind](https://tailwindcss.com/)
+1. Clona este repositorio en tu máquina local utilizando `git clone`.
+2. Asegúrate de tener instalado un servidor web (como Apache) y PHP en tu máquina local.
+3. Coloca los archivos del repositorio en la carpeta de tu servidor web local.
+4. Accede a la página desde tu navegador web visitando la URL del servidor local.
 
-## Features
-
-<!-- List the features of your application or follow the template. Don't share the figma file here :) -->
-
-This application/site was created as a submission to a [DevChallenges](https://devchallenges.io/challenges) challenge. The [challenge](https://devchallenges.io/challenges/N1fvBjQfhlkctmwj1tnw) was to build an application to complete the given user storie.
-
-## How To Use
-
-<!-- Example: -->
-
-To clone and run this application, you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:
-
-```bash
-# Clone this repository
-$ git clone https://github.com/your-user-name/your-project-name
-
-# Install dependencies
-$ npm install
-
-# Run the app
-$ npm start
-```
-
-## Acknowledgements
-
-<!-- This section should list any articles or add-ons/plugins that helps you to complete the project. This is optional but it will help you in the future. For example -->
-
-- [Steps to replicate a design with only HTML and CSS](https://devchallenges-blogs.web.app/how-to-replicate-design/)
-- [Node.js](https://nodejs.org/)
-- [Marked - a markdown parser](https://github.com/chjj/marked)
-
-## Contact
-
-- Website [your-website.com](https://{your-web-site-link})
-- GitHub [@your-username](https://{github.com/your-usermame})
-- Twitter [@your-twitter](https://{twitter.com/your-username})
+¡Disfruta de la página web de inicio de sesión y registro con el poder de Tailwind CSS! Siéntete libre de personalizar y mejorar la funcionalidad según tus necesidades.
