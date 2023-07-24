@@ -27,6 +27,11 @@
                     <div class="w-4" ><img  src="./images/email.svg" alt="logo"></div>
                     <input class="outline-none w-full" type="email" autocomplete="off" name="email" placeholder="Email" required >
                 </div>
+                
+                <div class="flex items-center gap-3 border border-[#BDBDBD] rounded-lg p-3 ps-4">
+                    <div class="w-4"><img src="./images/password.svg" alt="logo"></div>
+                    <input class="outline-none w-full" type="password" autocomplete="off" name="password" placeholder="Password" required >
+                </div> 
                 <?php
                     session_start();
                     if (isset($_SESSION['error_message'])) {
@@ -34,10 +39,6 @@
                         unset($_SESSION['error_message']);
                     }
                     ?>
-                <div class="flex items-center gap-3 border border-[#BDBDBD] rounded-lg p-3 ps-4">
-                    <div class="w-4"><img src="./images/password.svg" alt="logo"></div>
-                    <input class="outline-none w-full" type="password" autocomplete="off" name="password" placeholder="Password" required >
-                </div> 
                 <button class="w-full p-1.5 mt-2 bg-blue-500 rounded-lg text-sm leading-normal font-semibold text-white" type="submit" >Start Coding Now</button>
             </form>
             

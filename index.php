@@ -16,15 +16,22 @@
                 <h3 class="font-semibold text-lg leading-snug" > Login </h3>
             </div>
 
-            <form class="flex flex-col gap-4 text-gray-500">
+            <form action="./php/login.php" method="post" class="flex flex-col gap-4 text-gray-500">
                 <div class="flex items-center gap-3 border border-[#BDBDBD] rounded-lg p-3 ps-4">
                     <div class="w-4" ><img  src="./images/email.svg" alt="logo"></div>
-                    <input class="outline-none w-full" type="email" autocomplete="off" placeholder="Email" >
+                    <input class="outline-none w-full" type="email" name="email" autocomplete="off" placeholder="Email" required>
                 </div>
                 <div class="flex items-center gap-3 border border-[#BDBDBD] rounded-lg p-3 ps-4">
                     <div class="w-4"><img src="./images/password.svg" alt="logo"></div>
-                    <input class="outline-none w-full" type="password" autocomplete="off" placeholder="Password" >
+                    <input class="outline-none w-full" type="password" name="password" autocomplete="off" placeholder="Password" required >
                 </div>
+                <?php
+                    session_start();
+                    if (isset($_SESSION['error_message'])) {
+                        echo '<p class="text-red-500">' . $_SESSION['error_message'] . '</p>';
+                        unset($_SESSION['error_message']);
+                    }
+                    ?>
                 <button class="w-full p-1.5 mt-2 bg-blue-500 rounded-lg text-sm leading-normal font-semibold text-white" type="submit" > Login </button>
             </form>
             

@@ -16,7 +16,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     //si todo esta bien , añadimos los datos
     $hash = password_hash($password,PASSWORD_DEFAULT);
 
-    $resultado = $mysqli -> query("insert into usuario(email,password) values ('$email','$password')"); 
+    $resultado = $mysqli -> query("insert into usuario(email,password) values ('$email','$hash')"); 
    
      if($resultado){
         $data = $mysqli -> query("SELECT * FROM usuario ORDER BY id DESC LIMIT 1");

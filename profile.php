@@ -1,3 +1,8 @@
+<?php
+        session_start();
+        extract($_SESSION['usuario']);
+
+        ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -49,7 +54,7 @@
             </div>
 
         </div>
-
+        
 
 
 
@@ -67,7 +72,7 @@
                     <p class="text-sm font-normal text-gray-500 ">Some info may be wisible to others people</p>
                 </div>
 
-                <a href="profile_edit.html"  type="submit" class="w-24 h-8 border border-gray-500 rounded-xl text-[#BDBDBD]">
+                <a href="profile_edit.php"  type="submit" class="w-24 h-8 border border-gray-500 rounded-xl text-[#BDBDBD]">
                     Edit
                 </a>
             </div>
@@ -83,22 +88,22 @@
 
                 <div  class=" flex items-center justify-between sm:justify-start border-t border-[#BDBDBD] p-6  px-5 sm:px-12">
                     <h3 class="w-52">NAME</h3>
-                    <h3 class="text-lg text-[#333] whitespace-nowrap">Benjamin Tavarez</h3>
+                    <h3 class="text-lg text-[#333] whitespace-nowrap"><?php echo $name?></h3>
                 </div>
 
                 <div  class=" flex items-center justify-between sm:justify-start border-t border-[#BDBDBD] p-6  px-5 sm:px-12">
                     <h3 class="w-52">BIO</h3>
-                    <h3 class="max-w-md text-lg text-[#333] overflow-hidden whitespace-nowrap text-ellipsis ">I a a iasdsadsadsn am a software deam ar and aasdsads  devchallenges benjamin vares teaa</h3>
+                    <h3 class="max-w-md text-lg text-[#333] overflow-hidden whitespace-nowrap text-ellipsis "><?php echo $bio?></h3>
                 </div>
 
                 <div  class=" flex items-center justify-between sm:justify-start border-t border-[#BDBDBD] p-6 px-5 sm:px-12">
                     <h3 class="w-52">PHONE</h3>
-                    <h3 class="text-lg text-[#333] whitespace-nowrap">Benjamin Tavarez</h3>
+                    <h3 class="text-lg text-[#333] whitespace-nowrap"><?php echo $phone?></h3>
                 </div>
 
                 <div  class=" flex items-center justify-between sm:justify-start border-t border-[#BDBDBD] p-6 px-5 sm:px-12">
                     <h3 class="w-52">EMAIL</h3>
-                    <h3 class="text-lg text-[#333] whitespace-nowrap">Benjamin Tavarez</h3>
+                    <h3 class="text-lg text-[#333] whitespace-nowrap"><?php echo $email?></h3>
                 </div>
 
                 <div  class=" flex items-center justify-between  sm:justify-start border-t border-[#BDBDBD] p-6 px-5 sm:px-12">

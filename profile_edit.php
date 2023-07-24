@@ -59,7 +59,7 @@
         </div>
 
         <div class="w-full max-w-3xl ">
-            <a class="text-lg text-blue-500" href="profile.html"> Back</a>
+            <a href="profile.php" class="text-lg text-blue-500" href="profile.html"> Back</a>
         </div>
 
         <!-- cuadro -->
