@@ -2,6 +2,11 @@
 
 Esta es una página web que ofrece la funcionalidad de inicio de sesión y registro para los usuarios, construida utilizando Tailwind CSS. Permite a los usuarios registrarse para crear una cuenta o iniciar sesión si ya tienen una cuenta existente. A continuación, se describen las principales características de la página:
 
+## Datos de Prueva
+- DB:autentificacion
+- Email: benjamin.tavarez@gmail.com
+- Pass: admin 
+
 ## Funcionalidades:
 
 ### 1. Inicio de Sesión (index.php):
