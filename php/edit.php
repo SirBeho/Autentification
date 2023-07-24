@@ -25,11 +25,11 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
         $resultado = $mysqli -> query("select * from usuario where id = '$user_id'");
         $_SESSION['usuario'] = $resultado-> fetch_assoc();
         $_SESSION['success_message'] = "Datos actualizados correctamente";
-        header("Location: ../profile.php"); 
+        header("Location: ../pages/profile.php"); 
         exit;
     }else {
         $_SESSION['error_message'] = ($file_error === 0 or $file_error === 4 ) ? "Error al actualizar los datos: " . $mysqli->error : Error_File($file_error);
-        header("Location: ../profile_edit.php");
+        header("Location: ../pages/profile_edit.php");
         exit;
     } 
 };

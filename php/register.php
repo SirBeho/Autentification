@@ -9,7 +9,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
      $resultado = $mysqli -> query("select * from usuario where email = '$email'");
     if($resultado->num_rows){
         $_SESSION['error_message'] = "Este Email ya ah sido registrado";
-        header("Location: ../register.php");
+        header("Location: ../pages/register.php");
         exit;
     } 
 
@@ -21,7 +21,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
      if($resultado){
         $data = $mysqli -> query("SELECT * FROM usuario ORDER BY id DESC LIMIT 1");
         $_SESSION['usuario'] = $data-> fetch_assoc();
-        header("Location: ../profile_edit.php");
+        header("Location: ../pages/profile_edit.php");
         exit;
     }  
 

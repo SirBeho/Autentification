@@ -11,7 +11,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 
     if($resultado && password_verify($password, $resultado['password'])){
         $_SESSION['usuario'] = $resultado;
-        header("Location: ../profile.php");
+        header("Location: ../pages/profile.php");
         exit;
     } else {
         $_SESSION['error_message'] = "Usuario o contraseña incorecta";
