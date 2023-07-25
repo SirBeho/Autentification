@@ -5,7 +5,7 @@
 
 <head>
     <!-- Incluir archivo de JS y estilos CSS -->
-    <script  src="../js/msj.js" type="module" defer></script>
+    <script src="./js/funciones.js"  defer></script>
     <link href="../css/output.css" rel="stylesheet">
     <title>Register</title>
 </head>
@@ -42,7 +42,7 @@
                 <!-- Mostrar mensaje de error si está configurado -->
                 <?php
                 if (isset($_SESSION['error_message'])) {
-                    echo '<p id="msj" class="text-red-500 w-full text-center absolute transform duration-500 ease-in-out bottom-16 " >' . $_SESSION['error_message'] . '</p>';
+                    echo '<p id="msj" class="text-red-500 w-full text-center absolute transform duration-500 ease-in-out mb-8 bottom-8 " >' . $_SESSION['error_message'] . '</p>';
                     unset($_SESSION['error_message']);
                 }
                 ?>

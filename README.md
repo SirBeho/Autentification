@@ -28,6 +28,7 @@ Esta es una página web que ofrece la funcionalidad de inicio de sesión y regis
 ### 4. Edición del Perfil de Usuario (profile_edit.php):
 
 - Edición del perfil del usuario, incluyendo el cambio de nombre, biografía, número de teléfono, correo electrónico y foto de perfil.
+- Cambio de contraseña con validacion.
 - Vista previa de la foto de perfil antes de guardar los cambios.
 - Mensajes de éxito o causa del error después de guardar los cambios en el perfil.
 

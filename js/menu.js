@@ -1,5 +1,3 @@
-import { Msj } from './msj.js';
-Msj();
 
 // Obtener referencias a elementos del DOM
 const boton = document.getElementById("control-menu"); // Botón para controlar el menú
@@ -7,7 +5,6 @@ const cuadro = document.getElementById("cuadro"); // Cuadro principal
 const targetDiv = document.getElementById("menu"); // Menú desplegable
 const modal_password = document.getElementById('passwordForm');
 /* const password = document.getElementById("edit_password"); // Cambiar Contraseña */
-
 
 // Agregar un evento de click al botón para mostrar/ocultar el menú desplegable
 boton.addEventListener('click', function () {
@@ -31,7 +28,6 @@ modal_password.addEventListener('submit', function(event) {
 
     if (password1 !== password2) {
         // Las contraseñas no coinciden, muestra un mensaje de error
-        // modal_password.innerHTML += `<p id="msj" class="text-red-500 w-full text-center  text-xs bottom-8" >Las contraseñas no coinciden. Por favor, inténtelo nuevamente.</p>`
          if (!document.getElementById('msj')) {
             const errorMessage = document.createElement('p');
             errorMessage.id = 'msj';
@@ -48,28 +44,6 @@ modal_password.addEventListener('submit', function(event) {
     }
 });
 
-
-
-// Función para mostrar la imagen seleccionada en un campo de archivo de entrada
-function showImg(event) {
-    const fileInput = event.target; // Obtener el campo de archivo de entrada
-    const imagePreview = document.getElementById("imagePreview"); // Obtener el elemento de vista previa de la imagen
-
-    if (fileInput.files && fileInput.files[0]) {
-        // Si se selecciona un archivo
-        const reader = new FileReader();
-        reader.onload = function (e) {
-            imagePreview.src = e.target.result; // Mostrar la imagen seleccionada en la vista previa
-            console.log(e.target.result, "hola");
-        };
-
-        reader.readAsDataURL(fileInput.files[0]); // Leer el contenido del archivo seleccionado
-    } else {
-        // Si no se selecciona un archivo, mostrar la imagen predeterminada
-        console.log("errors");
-        imagePreview.src = `./pictures/<?php echo $img ? $img : "usuario.jpg"; ?>`;
-    }
-}
 
 
 

@@ -36,7 +36,7 @@ extract($_SESSION['usuario']);
         <div id="cuadro" class="w-full max-w-3xl sm:border border-[#BDBDBD] rounded-xl text-[#333]">
 
             <!-- Encabezado del cuadro -->
-            <div class="px-5 sm:px-12 py-8 flex flex-row justify-between items-center">
+            <div class="px-5 sm:px-12 py-8 relative flex flex-row justify-between items-center">
                 <div>
                     <h3 class="font-normal text-xl leading-snug text-black">Profile</h3>
                     <p class="text-sm font-normal text-gray-500">Some info may be visible to others people</p>
@@ -46,16 +46,19 @@ extract($_SESSION['usuario']);
                 <a href="./profile_edit.php" type="submit" class="flex justify-center items-center w-24 h-8 border border-gray-500 rounded-xl text-gray-500">
                     <span>Edit</span>
                 </a>
+
+                <!-- Mostrar mensaje de éxito si está configurado -->
+                    <?php
+                    if (isset($_SESSION['success_message'])) {
+                        echo '<span id="msj" class="text-green-500 text-xl w-full text-center absolute transform duration-500 ease-in-out left-0 bottom-8">' . $_SESSION['success_message'] . '</span>';
+                        unset($_SESSION['success_message']);
+                    }
+                    ?>
+
             </div>
 
-            <!-- Mostrar mensaje de éxito si está configurado -->
-            <?php
-            if (isset($_SESSION['success_message'])) {
-                echo '<p id="msj" class="text-green-500 text-center text-xl">' . $_SESSION['success_message'] . '</p>';
-                unset($_SESSION['success_message']);
-            }
-            ?>
-
+            
+          
             <!-- Formulario para mostrar la información del perfil -->
             <form class="flex flex-col text-[#BDBDBD] text-sm leading-6">
 
