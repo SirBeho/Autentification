@@ -1,17 +1,21 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <!-- Incluir archivo de estilos CSS -->
+    <!-- Incluir archivo de Js y estilos CSS -->
+    <script src="./js/msj.js" type="module" defer></script>
     <link href="css/output.css" rel="stylesheet">
     <title>Login</title>
 </head>
 
 <body>
+
+
     <!-- Contenedor principal -->
     <div class="min-h-screen flex flex-wrap justify-center sm:content-center font-['Open_Sans']">
         <!-- Contenedor del formulario de inicio de sesión -->
-        <div class="w-full sm:max-w-[430px] p-6 sm:p-12 sm:border border-[#BDBDBD] rounded-3xl text-[#333]">
+        <div class="w-full sm:max-w-[430px] p-6 sm:p-12 sm:border border-[#BDBDBD]  rounded-3xl text-[#333]">
 
             <!-- Mostrar logotipo "devchallenges" -->
             <img class="ms-1" src="./svg/devchallenges.svg" alt="logo" >
@@ -22,23 +26,23 @@
             </div>
 
             <!-- Formulario de inicio de sesión -->
-            <form action="./php/login.php" method="post" class="flex flex-col gap-4 text-gray-500">
+            <form action="./php/login.php" method="post" class="flex flex-col gap-4 relative text-gray-500">
+                          
                 <!-- Campo para el correo electrónico -->
                 <div class="flex items-center gap-3 border border-[#BDBDBD] rounded-lg p-3 ps-4">
                     <div class="w-4" ><img  src="./svg/email.svg" alt="logo"></div>
-                    <input class="outline-none w-full" type="email" name="email" autocomplete="off" placeholder="Email" required>
+                    <input class="outline-none w-full" type="email" name="email" autocomplete="off" placeholder="Email" value="<?php echo isset($_SESSION['login_email']) ? ($_SESSION['login_email']  ): 'benjamin.tavarez@gmail.com'; unset($_SESSION['login_email']); ?>" required>
                 </div>
                 <!-- Campo para la contraseña -->
                 <div class="flex items-center gap-3 border border-[#BDBDBD] rounded-lg p-3 ps-4">
                     <div class="w-4"><img src="./svg/password.svg" alt="logo"></div>
                     <input class="outline-none w-full" type="password" name="password" autocomplete="off" placeholder="Password" required >
                 </div>
-
+            
                 <!-- Mostrar mensaje de error si está configurado -->
                 <?php
-                session_start();
                 if (isset($_SESSION['error_message'])) {
-                    echo '<p class="text-red-500">' . $_SESSION['error_message'] . '</p>';
+                    echo '<p id="msj" class="text-red-500 w-full text-center absolute transform duration-500 ease-in-out bottom-16 " >' . $_SESSION['error_message'] . '</p>';
                     unset($_SESSION['error_message']);
                 }
                 ?>

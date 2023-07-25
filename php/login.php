@@ -14,6 +14,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
         header("Location: ../pages/profile.php");
         exit;
     } else {
+        $_SESSION['login_email'] = $email;
         $_SESSION['error_message'] = "Usuario o contraseña incorecta";
         header("Location: ../index.php");
         exit;

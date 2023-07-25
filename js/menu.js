@@ -1,7 +1,13 @@
+import { Msj } from './msj.js';
+Msj();
+
 // Obtener referencias a elementos del DOM
 const boton = document.getElementById("control-menu"); // Botón para controlar el menú
 const cuadro = document.getElementById("cuadro"); // Cuadro principal
 const targetDiv = document.getElementById("menu"); // Menú desplegable
+const modal_password = document.getElementById('passwordForm');
+/* const password = document.getElementById("edit_password"); // Cambiar Contraseña */
+
 
 // Agregar un evento de click al botón para mostrar/ocultar el menú desplegable
 boton.addEventListener('click', function () {
@@ -16,6 +22,33 @@ cuadro.addEventListener('mouseover', function () {
     targetDiv.classList.add("h-0"); 
     targetDiv.classList.remove("h-36"); 
 });
+
+modal_password.addEventListener('submit', function(event) {
+    event.preventDefault(); // Evita que el formulario se envíe automáticamente
+
+    const password1 = modal_password.password1.value;
+    const password2 = modal_password.password2.value;
+
+    if (password1 !== password2) {
+        // Las contraseñas no coinciden, muestra un mensaje de error
+        // modal_password.innerHTML += `<p id="msj" class="text-red-500 w-full text-center  text-xs bottom-8" >Las contraseñas no coinciden. Por favor, inténtelo nuevamente.</p>`
+         if (!document.getElementById('msj')) {
+            const errorMessage = document.createElement('p');
+            errorMessage.id = 'msj';
+            errorMessage.className = 'text-red-500 w-full text-center absolute transform duration-500 ease-in-out bottom-16';
+            errorMessage.textContent = 'Las contraseñas no coinciden. Por favor, inténtelo nuevamente.';
+            modal_password.appendChild(errorMessage);
+        }   
+
+        Msj();
+
+    } else {
+        // Las contraseñas coinciden, puedes enviar el formulario
+        this.submit();
+    }
+});
+
+
 
 // Función para mostrar la imagen seleccionada en un campo de archivo de entrada
 function showImg(event) {
@@ -37,3 +70,11 @@ function showImg(event) {
         imagePreview.src = `./pictures/<?php echo $img ? $img : "usuario.jpg"; ?>`;
     }
 }
+
+
+
+    
+  
+
+   
+   

@@ -43,7 +43,7 @@ extract($_SESSION['usuario']);
                 </div>
 
                 <!-- Enlace para editar el perfil -->
-                <a href="profile_edit.php" type="submit" class="flex justify-center items-center w-24 h-8 border border-gray-500 rounded-xl text-gray-500">
+                <a href="./profile_edit.php" type="submit" class="flex justify-center items-center w-24 h-8 border border-gray-500 rounded-xl text-gray-500">
                     <span>Edit</span>
                 </a>
             </div>
@@ -51,7 +51,7 @@ extract($_SESSION['usuario']);
             <!-- Mostrar mensaje de éxito si está configurado -->
             <?php
             if (isset($_SESSION['success_message'])) {
-                echo '<p class="text-green-500 text-center text-xl">' . $_SESSION['success_message'] . '</p>';
+                echo '<p id="msj" class="text-green-500 text-center text-xl">' . $_SESSION['success_message'] . '</p>';
                 unset($_SESSION['success_message']);
             }
             ?>
@@ -94,7 +94,7 @@ extract($_SESSION['usuario']);
                 <!-- Sección de la contraseña -->
                 <div class="flex items-center justify-between  sm:justify-start border-t border-[#BDBDBD] p-6 px-5 sm:px-12">
                     <h3 class="w-52">PASSWORD</h3>
-                    <h3 class="text-lg text-[#333] whitespace-nowrap">*********</h3>
+                    <h3 class="text-lg text-[#333] whitespace-nowrap">••••••••••••</h3>
                 </div>
 
             </form>

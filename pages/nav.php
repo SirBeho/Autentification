@@ -1,5 +1,5 @@
 <!-- Incluir archivo JavaScript "menu.js" de forma asíncrona -->
-<script src="../js/menu.js" defer></script>
+<script type="module" src="../js/menu.js" defer></script>
 
 <!-- Contenedor principal con diseño flexible, padding y logotipo -->
 <div class="flex justify-between w-screen px-4 sm:px-12 py-4 relative">

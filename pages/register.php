@@ -1,8 +1,11 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <!-- Incluir archivo de estilos CSS -->
+    <!-- Incluir archivo de JS y estilos CSS -->
+    <script  src="../js/msj.js" type="module" defer></script>
     <link href="../css/output.css" rel="stylesheet">
     <title>Register</title>
 </head>
@@ -23,11 +26,11 @@
             </div>
 
             <!-- Formulario de registro -->
-            <form action="../php/register.php" method="post" class="flex flex-col gap-4 text-gray-500">
+            <form action="../php/register.php" method="post" class="flex flex-col relative gap-4 text-gray-500">
                 <!-- Campo para el correo electrónico -->
                 <div class="flex items-center gap-3 border border-[#BDBDBD] rounded-lg p-3 ps-4">
                     <div class="w-4" ><img  src="../svg/email.svg" alt="logo"></div>
-                    <input class="outline-none w-full" type="email" autocomplete="off" name="email" placeholder="Email" required >
+                    <input class="outline-none w-full" type="email" autocomplete="off" name="email" value="<?php echo isset($_SESSION['login_email']) ? ($_SESSION['login_email']  ): ''; unset($_SESSION['login_email']); ?>" placeholder="Email" required >
                 </div>
                 
                 <!-- Campo para la contraseña -->
@@ -38,9 +41,8 @@
 
                 <!-- Mostrar mensaje de error si está configurado -->
                 <?php
-                session_start();
                 if (isset($_SESSION['error_message'])) {
-                    echo '<p class="text-red-500">' . $_SESSION['error_message'] . '</p>';
+                    echo '<p id="msj" class="text-red-500 w-full text-center absolute transform duration-500 ease-in-out bottom-16 " >' . $_SESSION['error_message'] . '</p>';
                     unset($_SESSION['error_message']);
                 }
                 ?>

@@ -5,9 +5,29 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     extract($_POST);
 
     require("connection.php");
+
+    
+    /* try {
+
+        $resultado = $mysqli->query("INSERT INTO usuario(id,email,password) VALUES ('33','$email','$hash')"); 
+        var_dump($resultado);
+        echo $resultad0;
+
+    } catch (mysqli_sql_exception $e) {
+        if($mysqli->errno === 1062){
+            echo "<h1>Este Email ya ha sido registrado</h1>";
+        }else{
+            echo "<h1>Este Eerropr general</h1>";
+        }
+    } 
+
+ */
+
+
     //validacion si el email ya esta registrado
      $resultado = $mysqli -> query("select * from usuario where email = '$email'");
     if($resultado->num_rows){
+        $_SESSION['login_email'] = $email;
         $_SESSION['error_message'] = "Este Email ya ah sido registrado";
         header("Location: ../pages/register.php");
         exit;
@@ -24,12 +44,6 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
         header("Location: ../pages/profile_edit.php");
         exit;
     }  
-
+ 
 };
 
-/* 
-try {
-    $resultado = $mysqli->query("INSERT INTO usuario(email,password) VALUES ('$email','$hash')"); 
-} catch (mysqli_sql_exception $e) {
-        echo "<h1>Este Email ya ha sido registrado</h1>";      
-} */
