@@ -4,5 +4,9 @@
   },
   "dependencies": {
     "flowbite": "^1.7.0"
+  },
+  "scripts": {
+    "styles": "npx tailwindcss -i ./css/input.css -o ./css/output.css --watch",
+    "buildStyles":"npx tailwindcss -o ./css/output.css --minify"
   }
 }

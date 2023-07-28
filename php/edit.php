@@ -14,7 +14,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 
     $file_name = ($_SESSION['usuario']['img'] == null and $file_error == 4) ?  null : "photo_".$user_id;
       
-     $query = "UPDATE usuario SET name='$name', bio='$bio', phone='$phone', email='$email' ,img ='$file_name' WHERE id='$user_id'";
+     $query = "UPDATE usuario SET name='$name', bio='$bio', phone='$phone', email='$email' WHERE id='$user_id'";
     
     if ($mysqli->query($query) === true and (!$file_error or $file_error == 4)) {
         

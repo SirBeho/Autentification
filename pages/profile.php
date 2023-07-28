@@ -22,7 +22,7 @@ extract($_SESSION['usuario']);
 
 <body>
     <!-- Contenedor principal -->
-    <div class="min-h-screen flex flex-col items-center font-['Noto_Sans'] bg-gray-50 ">
+    <div class="min-h-screen sx:px-4 flex flex-col items-center font-['Noto_Sans'] bg-gray-50 ">
 
         <?php include "./nav.php" ?>
 
@@ -33,7 +33,7 @@ extract($_SESSION['usuario']);
         </div>
 
         <!-- Cuadro de perfil -->
-        <div id="cuadro" class="w-full max-w-3xl sm:border border-[#BDBDBD] rounded-xl text-[#333]">
+        <div id="cuadro" class="w-full max-w-3xl sx:border border-gray-BD rounded-xl text-gray-33">
 
             <!-- Encabezado del cuadro -->
             <div class="px-5 sm:px-12 py-8 relative flex flex-row justify-between items-center">
@@ -60,44 +60,44 @@ extract($_SESSION['usuario']);
             
           
             <!-- Formulario para mostrar la información del perfil -->
-            <form class="flex flex-col text-[#BDBDBD] text-sm leading-6">
+            <form class="flex flex-col text-gray-BD text-sm leading-6">
 
                 <!-- Sección de la foto de perfil -->
-                <div class="flex items-center justify-between sm:justify-start border-t border-[#BDBDBD] p-2 px-5 sm:px-12">
+                <div class="flex items-center justify-between sm:justify-start border-t border-gray-BD p-2 px-5 sm:px-12">
                     <h3 class="w-52">PHOTO</h3>
                     <div class="h-20 w-20  overflow-hidden rounded-lg ">
-                        <img class="w-full h-full object-cover" src="../pictures/<?php echo $img ? $img : "usuario.jpg" ?>" alt="">
+                        <img class="w-full h-full object-cover" src="../pictures/<?php echo is_file("../pictures/photo_".$id) ? "photo_".$id : "usuario.jpg" ?>" alt="">
                     </div>
                 </div>
 
                 <!-- Sección del nombre -->
-                <div class="flex items-center justify-between sm:justify-start border-t border-[#BDBDBD] p-6  px-5 sm:px-12">
+                <div class="flex items-center justify-between sm:justify-start border-t border-gray-BD p-6  px-5 sm:px-12">
                     <h3 class="w-52">NAME</h3>
-                    <h3 class="text-lg text-[#333] whitespace-nowrap"><?php echo $name ?></h3>
+                    <h3 class="text-lg text-gray-33 whitespace-nowrap"><?php echo $name ?></h3>
                 </div>
 
                 <!-- Sección de la biografía -->
-                <div class="flex items-center justify-between sm:justify-start border-t border-[#BDBDBD] p-6  px-5 sm:px-12">
+                <div class="flex items-center justify-between sm:justify-start border-t border-gray-BD p-6  px-5 sm:px-12">
                     <h3 class="w-52">BIO</h3>
-                    <h3 class="max-w-md text-lg text-[#333] overflow-hidden whitespace-nowrap text-ellipsis "><?php echo $bio ?></h3>
+                    <h3 class="max-w-md text-lg text-gray-33 overflow-hidden whitespace-nowrap text-ellipsis "><?php echo $bio ?></h3>
                 </div>
 
                 <!-- Sección del teléfono -->
-                <div class="flex items-center justify-between sm:justify-start border-t border-[#BDBDBD] p-6 px-5 sm:px-12">
+                <div class="flex items-center justify-between sm:justify-start border-t border-gray-BD p-6 px-5 sm:px-12">
                     <h3 class="w-52">PHONE</h3>
-                    <h3 class="text-lg text-[#333] whitespace-nowrap"><?php echo $phone ?></h3>
+                    <h3 class="text-lg text-gray-33 whitespace-nowrap"><?php echo $phone ?></h3>
                 </div>
 
                 <!-- Sección del correo electrónico -->
-                <div class="flex items-center justify-between sm:justify-start border-t border-[#BDBDBD] p-6 px-5 sm:px-12">
+                <div class="flex items-center justify-between sm:justify-start border-t border-gray-BD p-6 px-5 sm:px-12">
                     <h3 class="w-52">EMAIL</h3>
-                    <h3 class="text-lg text-[#333] whitespace-nowrap"><?php echo $email ?></h3>
+                    <h3 class="text-lg text-gray-33 whitespace-nowrap"><?php echo $email ?></h3>
                 </div>
 
                 <!-- Sección de la contraseña -->
-                <div class="flex items-center justify-between  sm:justify-start border-t border-[#BDBDBD] p-6 px-5 sm:px-12">
+                <div class="flex items-center justify-between  sm:justify-start border-t border-gray-BD p-6 px-5 sm:px-12">
                     <h3 class="w-52">PASSWORD</h3>
-                    <h3 class="text-lg text-[#333] whitespace-nowrap">••••••••••••</h3>
+                    <h3 class="text-lg text-gray-33 whitespace-nowrap">••••••••••••</h3>
                 </div>
 
             </form>

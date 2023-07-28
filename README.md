@@ -4,6 +4,7 @@ Esta es una página web que ofrece la funcionalidad de inicio de sesión y regis
 
 ## Datos de Prueva
 - DB:autentificacion
+- Email: harold.carazas@gmail.com
 - Email: benjamin.tavarez@gmail.com
 - Pass: admin 
 

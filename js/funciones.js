@@ -15,7 +15,7 @@ function showImg(event) {
     } else {
         // Si no se selecciona un archivo, mostrar la imagen predeterminada
         console.log("errors");
-        imagePreview.src = `./pictures/<?php echo $img ? $img : "usuario.jpg"; ?>`;
+        imagePreview.src = `./pictures/<?php echo is_file("../pictures/photo_".$id) ? "photo_".$id : "usuario.jpg" ?>`;
     } 
 }
 

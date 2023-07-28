@@ -14,7 +14,7 @@
     <!-- Contenedor principal -->
     <div class="min-h-screen flex flex-wrap justify-center sm:content-center font-['Open_Sans']">
         <!-- Contenedor del formulario de registro -->
-        <div class="w-full sm:max-w-[430px] p-6 sm:p-12 sm:border border-[#BDBDBD] rounded-3xl text-[#333]">
+        <div class="w-full sm:max-w-ssx p-6 sm:p-12 sm:border border-gray-BD rounded-3xl text-gray-33">
 
             <!-- Mostrar logotipo "devchallenges" -->
             <img class="ms-2" src="../svg/devchallenges.svg" alt="logo" >
@@ -28,13 +28,13 @@
             <!-- Formulario de registro -->
             <form action="../php/register.php" method="post" class="flex flex-col relative gap-4 text-gray-500">
                 <!-- Campo para el correo electrónico -->
-                <div class="flex items-center gap-3 border border-[#BDBDBD] rounded-lg p-3 ps-4">
+                <div class="flex items-center gap-3 border border-gray-BD rounded-lg p-3 ps-4">
                     <div class="w-4" ><img  src="../svg/email.svg" alt="logo"></div>
                     <input class="outline-none w-full" type="email" autocomplete="off" name="email" value="<?php echo isset($_SESSION['login_email']) ? ($_SESSION['login_email']  ): ''; unset($_SESSION['login_email']); ?>" placeholder="Email" required >
                 </div>
                 
                 <!-- Campo para la contraseña -->
-                <div class="flex items-center gap-3 border border-[#BDBDBD] rounded-lg p-3 ps-4">
+                <div class="flex items-center gap-3 border border-gray-BD rounded-lg p-3 ps-4">
                     <div class="w-4"><img src="../svg/password.svg" alt="logo"></div>
                     <input class="outline-none w-full" type="password" autocomplete="off" name="password" placeholder="Password" required >
                 </div> 
@@ -60,7 +60,7 @@
                     <button><img src="../svg/Twitter.svg" alt="logo"></button>
                     <button><img src="../svg/Gihub.svg" alt="logo"></button>
                 </div>
-                <p class="w-fit text-[17px] text-[#333]">Already a member? <a href="../index.php" class="text-blue-500">Login</a></p>
+                <p class="w-fit text-[17px] text-gray-33">Already a member? <a href="../index.php" class="text-blue-500">Login</a></p>
             </div>
 
         </div>

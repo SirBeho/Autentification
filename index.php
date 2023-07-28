@@ -5,17 +5,15 @@
 <head>
     <!-- Incluir archivo de Js y estilos CSS -->
     <script src="./js/funciones.js"  defer></script>
-    <link href="css/output.css" rel="stylesheet">
+    <link href="./css/output.css" rel="stylesheet">
     <title>Login</title>
 </head>
 
 <body>
-
-
     <!-- Contenedor principal -->
     <div class="min-h-screen flex flex-wrap justify-center sm:content-center font-['Open_Sans']">
         <!-- Contenedor del formulario de inicio de sesión -->
-        <div class="w-full sm:max-w-[430px] p-6 sm:p-12 sm:border border-[#BDBDBD]  rounded-3xl text-[#333]">
+        <div class="w-full sx:max-w-ssx p-6 sm:p-12 sm:border border-gray-BD  rounded-3xl text-gray-33">
 
             <!-- Mostrar logotipo "devchallenges" -->
             <img class="ms-1" src="./svg/devchallenges.svg" alt="logo" >
@@ -29,12 +27,12 @@
             <form action="./php/login.php" method="post" class=" flex flex-col gap-4 relative text-gray-500">
                           
                 <!-- Campo para el correo electrónico -->
-                <div class="flex items-center gap-3 border border-[#BDBDBD] rounded-lg p-3 ps-4">
+                <div class="flex items-center gap-3 border border-gray-BD rounded-lg p-3 ps-4">
                     <div class="w-4" ><img  src="./svg/email.svg" alt="logo"></div>
-                    <input class="outline-none w-full " type="email" name="email" autocomplete="off" placeholder="Email" value="<?php echo isset($_SESSION['login_email']) ? ($_SESSION['login_email']  ): 'benjamin.tavarez@gmail.com'; unset($_SESSION['login_email']); ?>" required>
+                    <input  class="outline-none w-full " type="email" name="email" autocomplete="off" placeholder="Email" value="<?php echo isset($_SESSION['login_email']) ? ($_SESSION['login_email']  ): ''; unset($_SESSION['login_email']); ?>" required>
                 </div>
                 <!-- Campo para la contraseña -->
-                <div class="flex items-center gap-3 border border-[#BDBDBD] rounded-lg p-3 ps-4">
+                <div class="flex items-center gap-3 border border-gray-BD rounded-lg p-3 ps-4">
                     <div class="w-4"><img src="./svg/password.svg" alt="logo"></div>
                     <input class="outline-none w-full" type="password" name="password" autocomplete="off" placeholder="Password" required >
                 </div>
@@ -61,7 +59,7 @@
                     <button><img src="./svg/Gihub.svg" alt="logo"></button>
                 </div>
                 <!-- Enlace para registrarse si no se tiene una cuenta -->
-                <p class="w-fit text-[17px] text-[#333]">Don't have an account yet? <a href="./pages/register.php" class="text-blue-500">Register</a></p>
+                <p class="w-fit text-[17px] text-gray-33">Don't have an account yet? <a href="./pages/register.php" class="text-blue-500">Register</a></p>
             </div>
 
         </div>

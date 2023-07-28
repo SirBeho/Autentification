@@ -24,17 +24,17 @@ extract($_SESSION['usuario']);
 
 <body>
     <!-- Contenedor principal -->
-    <div class="min-h-screen flex flex-col items-center font-['Noto_Sans'] bg-gray-50 ">
+    <div class="min-h-screen flex flex-col items-center p-4 font-['Noto_Sans'] bg-gray-50 ">
 
         <?php include "nav.php"  ?>
         
         <!-- Contenedor para el botón de volver atrás -->
-        <div class="w-full max-w-3xl ps-5 ">
+        <div class="w-full max-w-3xl ">
             <a href="profile.php" class="text-lg text-blue-500" href="profile.html">&lt; Back</a>
         </div>
 
         <!-- Cuadro de edición del perfil -->
-        <div id="cuadro" class="w-full max-w-3xl sm:border px-3 min-[560px]:px-10 py-8 my-5 border-[#BDBDBD] rounded-xl text-[#333]">
+        <div id="cuadro" class="w-full max-w-3xl sx:border sx:px-8 py-8 my-5 border-gray-BD rounded-xl text-gray-33">
 
             <!-- Encabezado del cuadro -->
             <div onclick="vista()" class="pb-5 flex flex-row justify-between items-center">
@@ -50,9 +50,9 @@ extract($_SESSION['usuario']);
                 <!-- Cambiar foto de perfil -->
                 <label class="w-fit flex gap-5 items-center cursor-pointer">
                     <input type="file" name="profile_photo" accept="image/*" class="hidden" onchange="showImg(event)">
-                    <div class="h-[4.5rem] w-[4.5rem] flex items-center justify-center overflow-hidden relative rounded-lg">
+                    <div class="h-18 w-18 flex items-center justify-center overflow-hidden relative rounded-lg">
                         <img class="absolute w-1/3" src="../svg/camara.svg" alt="">
-                        <img id="imagePreview" class="w-full h-full object-cover" src="../pictures/<?php echo $img ? $img : "usuario.jpg"; ?>" alt="">
+                        <img id="imagePreview" class="w-full h-full object-cover" src="../pictures/<?php echo is_file("../pictures/photo_".$id) ? "photo_".$id : "usuario.jpg" ?>" alt="">
                     </div>
                     <h3 class="w-52 text-gray-500">CAMBIAR FOTO</h3>
                 </label>
@@ -60,27 +60,27 @@ extract($_SESSION['usuario']);
                 <!-- Campos de edición del perfil -->
                 <label class="items-center">
                     <span>Name</span><br>
-                    <input placeholder="Enter your name..." name="name" class="min-[560px]:max-w-sm w-full text-sm border border-gray-400 rounded-xl bg-transparent p-3" value="<?php echo $name ?>"></input>
+                    <input placeholder="Enter your name..." name="name" class="sx:max-w-sm w-full text-sm border border-gray-400 rounded-xl bg-transparent p-3" value="<?php echo $name ?>"></input>
                 </label>
 
                 <label class="items-center">
                     <span>Bio</span><br>
-                    <textarea placeholder="Enter your bio..." rows="3" name="bio" class="min-[560px]:max-w-sm w-full text-sm border border-gray-400 rounded-xl bg-transparent p-3 resize-none"><?php echo $bio ?></textarea>
+                    <textarea placeholder="Enter your bio..." rows="3" name="bio" class="sx:max-w-sm w-full text-sm border border-gray-400 rounded-xl bg-transparent p-3 resize-none"><?php echo $bio ?></textarea>
                 </label>
 
                 <label class="items-center">
                     <span>Phone</span><br>
-                    <input placeholder="Enter your phone..." name="phone" class="min-[560px]:max-w-sm w-full text-sm border border-gray-400 rounded-xl bg-transparent p-3" value="<?php echo $phone ?>"></input>
+                    <input placeholder="Enter your phone..." name="phone" class="sx:max-w-sm w-full text-sm border border-gray-400 rounded-xl bg-transparent p-3" value="<?php echo $phone ?>"></input>
                 </label>
 
                 <label class="items-center">
                     <span>Email</span><br>
-                    <input placeholder="Enter your email..." name="email" class="min-[560px]:max-w-sm w-full text-sm border border-gray-400 rounded-xl bg-transparent p-3" value="<?php echo $email ?>"></input>
+                    <input placeholder="Enter your email..." name="email" class="sx:max-w-sm w-full text-sm border border-gray-400 rounded-xl bg-transparent p-3" value="<?php echo $email ?>"></input>
                 </label>
 
                 <label class="items-center ">
                     <span>Password</span><br>
-                    <div class="relative flex items-center min-[560px]:max-w-sm w-full">
+                    <div class="relative flex items-center sx:max-w-sm w-full">
                         <input placeholder="Enter your password..." name="password" class="w-full text-sm border border-gray-400 rounded-xl bg-transparent p-3 pr-10" value="*********">
                         <img  data-modal-target="authentication-modal" data-modal-toggle="authentication-modal" id="edit_password" class="absolute right-4 w-5 h-5 cursor-pointer" src="../svg/lapiz.svg" alt="">
                     </div>
