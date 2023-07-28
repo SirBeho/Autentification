@@ -19,6 +19,9 @@ extract($_SESSION['usuario']);
     <link href="../css/output.css" rel="stylesheet" />
     <title>Profile</title>
 </head>
+<style>
+    
+</style>
 
 <body>
     <!-- Contenedor principal -->
@@ -71,15 +74,15 @@ extract($_SESSION['usuario']);
                 </div>
 
                 <!-- Sección del nombre -->
-                <div class="flex items-center justify-between sm:justify-start border-t border-gray-BD p-6  px-5 sm:px-12">
+                <div class="flex items-center justify-between sm:justify-start border-t border-gray-BD p-6   px-5 sm:px-12">
                     <h3 class="w-52">NAME</h3>
                     <h3 class="text-lg text-gray-33 whitespace-nowrap"><?php echo $name ?></h3>
                 </div>
 
                 <!-- Sección de la biografía -->
-                <div class="flex items-center justify-between sm:justify-start border-t border-gray-BD p-6  px-5 sm:px-12">
+                <div class="flex items-center justify-between sm:justify-start border-t border-gray-BD p-6 px-5 sm:px-12 cursor-pointer" >
                     <h3 class="w-52">BIO</h3>
-                    <h3 class="max-w-md text-lg text-gray-33 overflow-hidden whitespace-nowrap text-ellipsis "><?php echo $bio ?></h3>
+                    <h3 class="max-w-md text-lg text-gray-33 text-ellipsis whitespace-nowrap transition-all  hover:duration-1000 transform h-7 duration-200  hover:overflow-y-scroll  hover:h-40 overflow-hidden hover:whitespace-normal " ><?php echo $bio ?></h3>    
                 </div>
 
                 <!-- Sección del teléfono -->

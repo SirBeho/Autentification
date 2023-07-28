@@ -13,6 +13,8 @@ module.exports = {
       },
       height: {
         '18' : '4.5rem',
+        '100c' : 'calc(100% - 1rem)',
+        
       },
       width: {
         '18' : '4.5rem',
