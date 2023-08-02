@@ -31,6 +31,7 @@ Esta es una página web que ofrece la funcionalidad de inicio de sesión y regis
 - Edición del perfil del usuario, incluyendo el cambio de nombre, biografía, número de teléfono, correo electrónico y foto de perfil.
 - Cambio de contraseña con validacion.
 - Vista previa de la foto de perfil antes de guardar los cambios.
+- Spiner de carga mientras se sube la foto.
 - Mensajes de éxito o causa del error después de guardar los cambios en el perfil.
 
 ### 5. Menú Desplegable (nav.php):
