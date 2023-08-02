@@ -12,7 +12,7 @@
             
             <h3 class="mb-4 text-xl font-medium text-gray-900 dark:text-white">Modificar Contraseña</h3>
                
-            <form action="../php/password.php" id="passwordForm" method="post"  class="space-y-6" action="#">
+            <form action="../php/password.php" id="passwordForm" method="post"  class="space-y-6 relative" action="#">
                  
                     <label class="block text-sm font-medium text-gray-900 dark:text-white">Nueva Contraseña
                         <input type="password"   name="password1" autocomplete="off" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg mt-2 focus:ring-blue-500  focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="ingrese la nuea contraseña" required>
@@ -23,8 +23,9 @@
                         <input type="password" name="password2" autocomplete="off" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg mt-2 focus:ring-blue-500  focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="Vuelva a ingresar la contraseña" required>
                     </label>
 
-            
-                    <button type="submit" class="w-full mt-10 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Cambiar Contraseña</button>
+                    <div id="btn_modal">
+                        <button  type="submit" class="w-full mt-4  text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Cambiar Contraseña</button>
+                    </div>
                 </form>
             
       

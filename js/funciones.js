@@ -22,13 +22,37 @@ function showImg(event) {
 //Mensaje de Errores y succes
 function Msj(){
     const msj = document.getElementById("msj") ;
-    
+        
     if(msj){
-        msj.classList.remove("bottom-8"); 
-        msj.classList.add("bottom-0");    
+        
+        //msj.classList.add("bottom-0"); 
+        //msj.classList.remove("bottom-8"); 
+        setTimeout(() => { 
+            msj.classList.remove("bottom-8"); 
+            msj.classList.add("bottom-0");
+        }, 1); 
         setTimeout(() => { 
             msj.remove();
-        }, 500000); 
+        }, 5000); 
     }
 }
 Msj() ;
+
+function delaySubmitForm(event) {
+    console.log(event);
+
+    // Muestra la pantalla de carga
+    var loadingScreen = document.createElement('iframe');
+    loadingScreen.src = 'loading.php';
+    loadingScreen.id = 'loading'
+    loadingScreen.style.position = 'fixed';
+    loadingScreen.style.top = '0';
+    loadingScreen.style.left = '0';
+    loadingScreen.style.width = '100vw';
+    loadingScreen.style.height = '100vh';
+    
+
+    loadingScreen.style.background = '#8c8be673';
+    document.body.appendChild(loadingScreen);
+
+}

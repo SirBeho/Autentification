@@ -36,7 +36,7 @@
                     <div class="w-4"><img src="./svg/password.svg" alt="logo"></div>
                     <input class="outline-none w-full" type="password" name="password" autocomplete="off" placeholder="Password" required >
                 </div>
-            
+      
                 <!-- Mostrar mensaje de error si está configurado -->
                 <?php
                 if (isset($_SESSION['error_message'])) {

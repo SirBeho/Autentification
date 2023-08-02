@@ -21,6 +21,7 @@ cuadro.addEventListener('mouseover', function () {
 });
 
 modal_password.addEventListener('submit', function(event) {
+    const btn_modal = document.getElementById('btn_modal');
     event.preventDefault(); // Evita que el formulario se envíe automáticamente
 
     const password1 = modal_password.password1.value;
@@ -31,9 +32,9 @@ modal_password.addEventListener('submit', function(event) {
          if (!document.getElementById('msj')) {
             const errorMessage = document.createElement('p');
             errorMessage.id = 'msj';
-            errorMessage.className = 'text-red-500 w-full text-center absolute transform duration-500 ease-in-out bottom-16';
+            errorMessage.className = 'text-red-500 w-full text-center absolute mb-[2.3rem] transform duration-500 ease-in-out bottom-8';
             errorMessage.textContent = 'Las contraseñas no coinciden. Por favor, inténtelo nuevamente.';
-            modal_password.appendChild(errorMessage);
+            btn_modal.appendChild(errorMessage);
         }   
 
         Msj();

@@ -5,7 +5,7 @@ if (!isset($_SESSION['usuario'])) {
     header("Location: ../index.php");
     die();
 }
-
+//hola
 // Extraer información del usuario de la sesión activa
 extract($_SESSION['usuario']);
 ?>
@@ -17,8 +17,9 @@ extract($_SESSION['usuario']);
     <!-- Incluir fuentes de Google y archivo de estilos CSS -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;300;400;500;700;900&display=swap">
     <link href="../css/output.css" rel="stylesheet" />
+    <link href="../css/output.css" rel="stylesheet" />
     <script src="../node_modules/flowbite/dist/flowbite.min.js"></script>
-    
+    <script src="../js/funciones.js"></script>
     <title>Edit Profile</title>
 </head>
 
@@ -37,15 +38,15 @@ extract($_SESSION['usuario']);
         <div id="cuadro" class="w-full max-w-3xl sx:border sx:px-8 py-8 my-5 border-gray-BD rounded-xl text-gray-33">
 
             <!-- Encabezado del cuadro -->
-            <div onclick="vista()" class="pb-5 flex flex-row justify-between items-center">
+            <div  onclick="showLoadingScreen()"  class="pb-5 flex flex-row justify-between items-center">
                 <div>
-                    <h3 class="font-normal text-xl leading-snug text-black">Change Info</h3>
+                    <h3  class="font-normal text-xl leading-snug text-black">Change Info</h3>
                     <p class="text-xs font-normal text-gray-500">Changes will be reflected to every service</p>
                 </div>
             </div>
 
             <!-- Formulario para editar el perfil -->
-            <form action="../php/edit.php" enctype="multipart/form-data" method="post" class="flex flex-col gap-5 text-xs leading-6 relative">
+            <form action="../php/edit.php" onsubmit="delaySubmitForm(event)" id="profile_edit_form"    enctype="multipart/form-data"  method="post" class="flex flex-col gap-5 text-xs leading-6 relative">
 
                 <!-- Cambiar foto de perfil -->
                 <label class="w-fit flex gap-5 items-center cursor-pointer">
@@ -90,11 +91,11 @@ extract($_SESSION['usuario']);
                 <!-- Mostrar mensaje de error si está configurado -->
                 <?php
                 if (isset($_SESSION['error_message'])) {
-                    echo '<p id="msj" class="text-red-500  absolute transform duration-500 ease-in-out mb-5 bottom-8" >' . $_SESSION['error_message'] . '</p>';
+                    echo '<p id="msj" class="text-red-500  absolute transform duration-500 ease-in-out mb-9 bottom-8" >' . $_SESSION['error_message'] . '</p>';
                     unset($_SESSION['error_message']);
                 }
                 if (isset($_SESSION['success_message'])) {
-                    echo '<p id="msj" class="text-green-500 absolute transform duration-500 ease-in-out mb-5 bottom-8">' . $_SESSION['success_message'] . '</p>';
+                    echo '<p id="msj" class="text-green-500 absolute transform duration-500 ease-in-out mb-9 bottom-8">' . $_SESSION['success_message'] . '</p>';
                     unset($_SESSION['success_message']);
                 }
                 ?>

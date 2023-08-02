@@ -20,7 +20,7 @@ extract($_SESSION['usuario']);
     <title>Profile</title>
 </head>
 <style>
-    
+
 </style>
 
 <body>
@@ -51,17 +51,24 @@ extract($_SESSION['usuario']);
                 </a>
 
                 <!-- Mostrar mensaje de éxito si está configurado -->
-                    <?php
-                    if (isset($_SESSION['success_message'])) {
-                        echo '<span id="msj" class="text-green-500 text-xl w-full text-center absolute transform duration-500 ease-in-out left-0 bottom-8">' . $_SESSION['success_message'] . '</span>';
-                        unset($_SESSION['success_message']);
-                    }
-                    ?>
+                <?php
+                ob_start(); // Iniciar el almacenamiento en búfer de la salida
+
+                // Resto de tu código
+                if (isset($_SESSION['success_message'])) {
+                    echo '<span id="msj" class="text-green-500 text-xl w-full text-center absolute transform duration-500 ease-in-out left-0 bottom-8">' . $_SESSION['success_message'] . '</span>';
+                    unset($_SESSION['success_message']);
+                }
+
+                // ...
+
+                ob_end_flush(); // Liberar el búfer y enviar contenido al navegador
+                ?>
 
             </div>
 
-            
-          
+
+
             <!-- Formulario para mostrar la información del perfil -->
             <form class="flex flex-col text-gray-BD text-sm leading-6">
 
@@ -69,7 +76,7 @@ extract($_SESSION['usuario']);
                 <div class="flex items-center justify-between sm:justify-start border-t border-gray-BD p-2 px-5 sm:px-12">
                     <h3 class="w-52">PHOTO</h3>
                     <div class="h-20 w-20  overflow-hidden rounded-lg ">
-                        <img class="w-full h-full object-cover" src="../pictures/<?php echo is_file("../pictures/photo_".$id) ? "photo_".$id : "usuario.jpg" ?>" alt="">
+                        <img class="w-full h-full object-cover" src="../pictures/<?php echo is_file("../pictures/photo_" . $id) ? "photo_" . $id : "usuario.jpg" ?>" alt="">
                     </div>
                 </div>
 
@@ -80,9 +87,9 @@ extract($_SESSION['usuario']);
                 </div>
 
                 <!-- Sección de la biografía -->
-                <div class="flex items-center justify-between sm:justify-start border-t border-gray-BD p-6 px-5 sm:px-12 cursor-pointer" >
+                <div class="flex items-center justify-between sm:justify-start border-t border-gray-BD p-6 px-5 sm:px-12 cursor-pointer">
                     <h3 class="w-52">BIO</h3>
-                    <h3 class="max-w-md text-lg text-gray-33 text-ellipsis whitespace-nowrap transition-all  hover:duration-1000 transform h-7 duration-200  hover:overflow-y-scroll  hover:h-40 overflow-hidden hover:whitespace-normal " ><?php echo $bio ?></h3>    
+                    <h3 class="max-w-md text-lg text-gray-33 text-ellipsis whitespace-nowrap transition-all  hover:duration-1000 transform h-7 duration-200  hover:overflow-y-scroll  hover:h-40 overflow-hidden hover:whitespace-normal "><?php echo $bio ?></h3>
                 </div>
 
                 <!-- Sección del teléfono -->

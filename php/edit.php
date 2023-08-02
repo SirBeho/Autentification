@@ -12,14 +12,13 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     $file_tmp = $_FILES["profile_photo"]["tmp_name"];
     $file_error = $_FILES["profile_photo"]["error"];
 
-    $file_name = ($_SESSION['usuario']['img'] == null and $file_error == 4) ?  null : "photo_".$user_id;
-      
+   
      $query = "UPDATE usuario SET name='$name', bio='$bio', phone='$phone', email='$email' WHERE id='$user_id'";
     
     if ($mysqli->query($query) === true and (!$file_error or $file_error == 4)) {
         
         if(!$file_error){
-            move_uploaded_file($file_tmp, "../pictures/".$file_name);
+            move_uploaded_file($file_tmp, "../pictures/photo_".$user_id);
         }
        
         $resultado = $mysqli -> query("select * from usuario where id = '$user_id'");
@@ -32,4 +31,4 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
         header("Location: ../pages/profile_edit.php");
         exit;
     } 
-};
+}; 
