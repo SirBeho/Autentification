@@ -23,7 +23,7 @@ cuadro.addEventListener('mouseover', function () {
 modal_password.addEventListener('submit', function(event) {
     const btn_modal = document.getElementById('btn_modal');
     event.preventDefault(); // Evita que el formulario se envíe automáticamente
-
+    
     const password1 = modal_password.password1.value;
     const password2 = modal_password.password2.value;
 
